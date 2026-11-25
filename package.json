@@ -1,0 +1,10 @@
+{
+  "name": "ifac-radio-em-movimento-multi-id",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "IFAC CONCT&T: visitante + Radinho + admin com Supabase e Vercel Functions",
+  "scripts": {
+    "check": "node --check visitor.js && node --check admin.js && node --check tutorial.js && node --check lib/server.js && node --check api/index.js"
+  }
+}

@@ -1,0 +1,68 @@
+
+.hero-tutorial-btn{min-height:54px;border-style:dashed}
+.demo-local .site-header:after{content:'SIMULAÇÃO ONLINE';position:absolute;right:0;top:92px;background:#2f9e41;color:#fff;font:900 10px/1 system-ui,sans-serif;letter-spacing:.16em;padding:8px 12px;border-radius:999px;box-shadow:0 8px 24px #11352326}
+#tutorial-root{position:fixed;inset:0;z-index:250;pointer-events:none}
+.tutorial-overlay{position:absolute;inset:0;background:rgba(6,18,10,.62);opacity:0;transition:opacity .25s ease;backdrop-filter:blur(2px)}
+.tutorial-overlay.visible{opacity:1}
+.tutorial-highlight{position:relative;z-index:251!important;box-shadow:0 0 0 4px rgba(255,255,255,.95),0 0 0 10px rgba(47,158,65,.45),0 20px 50px rgba(0,0,0,.25)!important;border-radius:18px;transition:box-shadow .25s ease}
+.tutorial-mascot{position:absolute;left:24px;top:24px;width:120px;pointer-events:none;transform-origin:50% 100%;transition:left .45s ease,top .45s ease,transform .45s ease;z-index:252}
+.tutorial-mascot.bounce{animation:tutorialBounce 1.6s ease-in-out infinite}
+@keyframes tutorialBounce{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+.mascot-body{position:relative;width:120px;height:126px}
+.mascot-shadow{position:absolute;left:17px;right:17px;bottom:0;height:16px;background:radial-gradient(ellipse at center,rgba(0,0,0,.35),transparent 70%);filter:blur(5px)}
+.mascot-legs{position:absolute;left:35px;bottom:12px;width:50px;height:24px}
+.mascot-legs:before,.mascot-legs:after{content:'';position:absolute;bottom:0;width:8px;height:20px;background:#37614b;border-radius:6px}.mascot-legs:before{left:10px}.mascot-legs:after{right:10px}
+.mascot-shoes:before,.mascot-shoes:after{content:'';position:absolute;bottom:-5px;width:20px;height:10px;background:#513624;border-radius:10px}.mascot-shoes:before{left:0}.mascot-shoes:after{right:0}
+.mascot-arms:before,.mascot-arms:after{content:'';position:absolute;top:56px;width:34px;height:8px;background:#37614b;border-radius:10px}.mascot-arms:before{left:-18px;transform:rotate(20deg)}.mascot-arms:after{right:-18px;transform:rotate(-25deg)}
+.mascot-hand{position:absolute;top:58px;right:-20px;width:12px;height:12px;background:#ecd8b4;border-radius:50%}
+.mascot-radio{position:absolute;left:14px;top:0;width:92px;height:84px;border-radius:18px;background:linear-gradient(180deg,#f2e3c0,#b98255 65%,#8f6038);border:3px solid #704724;box-shadow:0 8px 0 #6a4426,0 12px 30px rgba(0,0,0,.28)}
+.mascot-radio:before{content:'';position:absolute;right:10px;top:-18px;width:3px;height:24px;background:#67795f;transform:rotate(17deg);transform-origin:bottom center;border-radius:2px}
+.mascot-face{position:absolute;left:9px;top:10px;width:74px;height:47px;border-radius:12px;background:linear-gradient(180deg,#204f35,#0f3425);border:3px solid #7d8b62;display:flex;align-items:center;justify-content:center;gap:10px}
+.mascot-eye{width:12px;height:12px;background:#fff;border-radius:50%;position:relative}.mascot-eye:after{content:'';position:absolute;left:3px;top:2px;width:5px;height:5px;background:#10291e;border-radius:50%}
+.mascot-smile{position:absolute;left:25px;bottom:8px;width:24px;height:12px;border-bottom:3px solid #efffdc;border-radius:0 0 14px 14px}
+.mascot-speaker{position:absolute;left:10px;bottom:10px;width:26px;height:18px;border-radius:50%;border:2px solid rgba(60,40,24,.5)}
+.mascot-knob{position:absolute;right:11px;bottom:10px;width:18px;height:18px;border-radius:50%;background:radial-gradient(circle at 35% 30%,#fff8,#795432 45%,#52351e)}
+.mascot-label{position:absolute;left:16px;bottom:5px;color:#fdf6dc;font:900 8px/1 system-ui,sans-serif;letter-spacing:.15em}
+.tutorial-card{position:absolute;left:170px;top:40px;max-width:min(380px,calc(100vw - 40px));background:#fffdf6;color:#173929;border:2px solid #d8e7d4;border-radius:20px;padding:16px 16px 14px;box-shadow:0 24px 48px rgba(0,0,0,.24);pointer-events:auto;transition:left .4s ease,top .4s ease;z-index:252}
+.tutorial-card:before{content:'';position:absolute;left:-14px;top:34px;border-width:10px 14px 10px 0;border-style:solid;border-color:transparent #fffdf6 transparent transparent;filter:drop-shadow(-2px 0 0 #d8e7d4)}
+.tutorial-chip{display:inline-flex;align-items:center;gap:7px;background:#e8f2e5;color:#2f7740;border-radius:999px;padding:6px 10px;font:900 10px/1 system-ui,sans-serif;letter-spacing:.13em;text-transform:uppercase}
+.tutorial-chip .dot{width:8px;height:8px;border-radius:50%;background:#2f9e41}
+.tutorial-card h3{font-size:22px;line-height:1.15;margin:10px 0 8px;letter-spacing:-.03em}
+.tutorial-card p{font-size:14px;line-height:1.55;margin:0;color:#3d5347}
+.tutorial-step-counter{font:800 11px/1 system-ui,sans-serif;letter-spacing:.15em;color:#68806f;margin-top:12px;text-transform:uppercase}
+.tutorial-actions{display:flex;gap:10px;justify-content:space-between;align-items:center;margin-top:16px}
+.tutorial-actions-left,.tutorial-actions-right{display:flex;gap:8px;align-items:center}
+.tutorial-btn{appearance:none;border:0;border-radius:999px;padding:11px 14px;font:800 12px/1 system-ui,sans-serif;letter-spacing:.06em;cursor:pointer;transition:transform .15s ease,opacity .15s ease}
+.tutorial-btn:hover{transform:translateY(-1px)}
+.tutorial-btn.secondary{background:#ebf1eb;color:#30533d}
+.tutorial-btn.primary{background:#2f9e41;color:#fff}
+.tutorial-btn.link{background:transparent;color:#6a7a70}
+.tutorial-pointer{position:absolute;width:84px;height:84px;border:3px dashed rgba(255,255,255,.65);border-radius:50%;pointer-events:none;z-index:251;animation:tutorialPulse 1.6s infinite}
+@keyframes tutorialPulse{0%{transform:scale(.85);opacity:.2}70%{transform:scale(1);opacity:1}100%{transform:scale(1.08);opacity:0}}
+@media(max-width:860px){
+  .tutorial-mascot{width:94px}.mascot-body{width:94px;height:104px}.mascot-radio{left:10px;width:74px;height:67px}.mascot-face{width:60px;height:37px}.mascot-eye{width:10px;height:10px}.mascot-smile{left:20px;bottom:5px;width:18px;height:10px}.mascot-arms:before,.mascot-arms:after{top:46px}.tutorial-card{left:20px!important;right:20px;top:auto!important;bottom:26px;max-width:none}.tutorial-card:before{display:none}.demo-local .site-header:after{top:78px}}
+
+/* FIX V2 — O destaque fica apenas no overlay, nunca eleva o site acima dos balões. */
+#tutorial-root{z-index:2147483000;pointer-events:none;isolation:isolate}
+.tutorial-overlay{display:none!important}
+.tutorial-shade{position:fixed;display:block;background:rgba(6,25,17,.67);backdrop-filter:blur(1.4px);pointer-events:auto;z-index:1;transition:left .18s,top .18s,width .18s,height .18s}
+.tutorial-focus-frame{position:fixed;pointer-events:none;border:3px solid #f7fff1;box-shadow:0 0 0 5px #35a85c90,0 6px 30px #032c2250;border-radius:15px;z-index:2;transition:left .18s,top .18s,width .18s,height .18s}
+.tutorial-mascot{position:fixed;z-index:4;pointer-events:none}
+.tutorial-card{position:fixed;z-index:5;pointer-events:auto;max-height:min(78vh,600px);overflow-y:auto;overscroll-behavior:contain}
+.tutorial-pointer{display:none!important}
+.tutorial-highlight{position:static!important;z-index:auto!important;box-shadow:none!important;transition:none!important}
+.tutorial-active{overflow-x:hidden}
+@media(max-width:860px){
+  .tutorial-card{left:16px!important;right:16px!important;bottom:max(16px, env(safe-area-inset-bottom, 0px))!important;top:auto!important;max-height:min(44vh,370px);padding:13px 14px 11px}
+  .tutorial-card h3{font-size:18px;margin:7px 0}
+  .tutorial-card p{font-size:12px;line-height:1.4}
+  .tutorial-card .tutorial-actions{margin-top:9px}
+  .tutorial-mascot{scale:.72;transform-origin:top left}
+  .tutorial-card .tutorial-btn{padding:10px 12px}
+}
+@media(prefers-reduced-motion:reduce){.tutorial-shade,.tutorial-focus-frame,.tutorial-card,.tutorial-mascot{transition:none!important}}
+#tutorial-root .tutorial-shade[hidden],
+#tutorial-root .tutorial-focus-frame[hidden],
+#tutorial-root .tutorial-mascot[hidden],
+#tutorial-root .tutorial-card[hidden]{display:none!important}
+#tutorial-root .tutorial-card .tutorial-actions{position:sticky;bottom:-14px;background:#fffdf6;padding-top:8px;padding-bottom:2px}

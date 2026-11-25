@@ -1,0 +1,94 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "version": 2,
+  "headers": [
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-store, max-age=0"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
+      ]
+    },
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        }
+      ]
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/state",
+      "destination": "/api/index?route=state"
+    },
+    {
+      "source": "/api/request",
+      "destination": "/api/index?route=request"
+    },
+    {
+      "source": "/api/cancel",
+      "destination": "/api/index?route=cancel"
+    },
+    {
+      "source": "/api/command",
+      "destination": "/api/index?route=command"
+    },
+    {
+      "source": "/api/admin/status",
+      "destination": "/api/index?route=admin/status"
+    },
+    {
+      "source": "/api/admin/state",
+      "destination": "/api/index?route=admin/state"
+    },
+    {
+      "source": "/api/admin/login",
+      "destination": "/api/index?route=admin/login"
+    },
+    {
+      "source": "/api/admin/logout",
+      "destination": "/api/index?route=admin/logout"
+    },
+    {
+      "source": "/api/admin/approve",
+      "destination": "/api/index?route=admin/approve"
+    },
+    {
+      "source": "/api/admin/reject",
+      "destination": "/api/index?route=admin/reject"
+    },
+    {
+      "source": "/api/admin/reject-all",
+      "destination": "/api/index?route=admin/reject-all"
+    },
+    {
+      "source": "/api/admin/revoke",
+      "destination": "/api/index?route=admin/revoke"
+    },
+    {
+      "source": "/api/admin/reset-signals",
+      "destination": "/api/index?route=admin/reset-signals"
+    },
+    {
+      "source": "/api/admin/reset-demo",
+      "destination": "/api/index?route=admin/reset-demo"
+    },
+    {
+      "source": "/api/bridge/sync",
+      "destination": "/api/index?route=bridge/sync"
+    }
+  ]
+}
