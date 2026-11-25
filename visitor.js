@@ -260,10 +260,24 @@ async function act(path,body={}){
   try{await api(path,body);await refresh()}catch(e){notify(e.message,true)}
 }
 function updateControls(){
-  const ready=inTour()?demo.status==='active':latestSharedState?.status==='active'&&latestSharedState.hardware?.tx_online&&latestSharedState.receivers?.[state.selectedTarget]?.online&&!latestSharedState.hardware?.busy;
-  document.querySelectorAll('.command').forEach(el=>el.disabled=state.sending||!ready);
-  $('auto').disabled=state.sending||!ready||(!inTour()&&!latestSharedState?.receivers?.[state.selectedTarget]?.cycle_capable);
-  $('auto').title=$('auto').disabled&&!inTour()?'Aguarde aprovação e receptor com firmware de ciclo online.':'';
+  const tour=inTour(), shared=latestSharedState;
+  const rx=(tour?demo.receivers:shared?.receivers)?.[state.selectedTarget];
+  const active=tour?demo.status==='active':shared?.status==='active';
+  const busy=state.sending||(!tour&&Boolean(shared?.hardware?.busy));
+  const connected=tour||Boolean(shared?.hardware?.tx_online&&rx?.online);
+  const ready=active&&connected&&!busy;
+  const capable=tour||Boolean(rx?.cycle_capable);
+  const autoRunning=rx?.mode==='auto';
+  const reason=!active?'Aguarde aprovação.':busy?'Aguarde a confirmação do comando anterior.':!connected?'Aguarde o transmissor e o receptor ficarem online.':'';
+  document.querySelectorAll('.command').forEach(el=>{el.disabled=!ready;el.title=reason;});
+  $('auto').disabled=!ready||!capable;
+  $('auto').title=reason||(!capable?'Receptor sem firmware de ciclo.':'');
+  $('auto-label').textContent=autoRunning?'ATUALIZAR CICLO':'INJETAR CICLO';
+  // Os campos nao sao bloqueados durante o ciclo nem durante a confirmacao.
+  for(const k of ['green','yellow','red'])$(`${k}-sec`).disabled=false;
+  const hint=$('cycle-help');
+  const message=reason||(autoRunning?'Ciclo ativo: altere os tempos e atualize, escolha uma cor ou pressione PARAR CICLO.':'Escolha os tempos e injete um ciclo. Uma cor manual substitui o ciclo.');
+  if(hint.textContent!==message)hint.textContent=message;
 }
 async function sendCommand(body){
   if(state.sending)return;

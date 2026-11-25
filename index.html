@@ -88,7 +88,7 @@
             <div class="console-subtitle"><span class="console-tag">● CANAL LIBERADO</span><p>Selecione <b>Localização A</b> ou <b>Localização B</b> acima; os botões comandam somente o ID escolhido. O retorno é confirmado pelo receptor.</p></div>
             <div class="control-section-title">CONTROLES DO DESTINO SELECIONADO <span>01 / 02</span></div>
             <div class="command-target-strip">TRANSMITIR PARA <strong id="command-target">LOCALIZAÇÃO A • SEM-001</strong></div><div class="button-grid"><button class="btn command red" data-kind="red"><span class="color-dot red-bg"></span><span>VERMELHO</span></button><button class="btn command yellow" data-kind="yellow"><span class="color-dot yellow-bg"></span><span>AMARELO</span></button><button class="btn command green" data-kind="green"><span class="color-dot green-bg"></span><span>VERDE</span></button></div>
-            <div class="cycle-card"><div class="cycle-head"><div><div class="control-section-title">CICLO AUTOMÁTICO <span>02 / 02</span></div><b>Programe os três tempos</b></div><small>Em segundos (2–30)</small></div><div class="fields"><label>VERDE<input id="green-sec" type="number" min="2" max="30" value="8" inputmode="numeric"></label><label>AMARELO<input id="yellow-sec" type="number" min="2" max="30" value="3" inputmode="numeric"></label><label>VERMELHO<input id="red-sec" type="number" min="2" max="30" value="8" inputmode="numeric"></label></div><button class="btn secondary wide" id="auto">INJETAR CICLO <span class="btn-arrow">↗</span></button></div>
+            <div class="cycle-card"><div class="cycle-head"><div><div class="control-section-title">CICLO AUTOMÁTICO <span>02 / 02</span></div><b>Programe os três tempos</b></div><small>Em segundos (2–30)</small></div><div class="fields"><label>VERDE<input id="green-sec" type="number" min="2" max="30" value="8" inputmode="numeric"></label><label>AMARELO<input id="yellow-sec" type="number" min="2" max="30" value="3" inputmode="numeric"></label><label>VERMELHO<input id="red-sec" type="number" min="2" max="30" value="8" inputmode="numeric"></label></div><button class="btn secondary wide" id="auto"><span id="auto-label">INJETAR CICLO</span> <span class="btn-arrow">↗</span></button><button class="btn command ghost wide" id="stop-cycle" data-kind="off">PARAR CICLO / APAGAR</button><p id="cycle-help" class="footnote" aria-live="polite">Edite os tempos e injete um novo ciclo; ou selecione uma cor para voltar ao modo manual.</p></div>
             <button class="btn ghost wide" id="finish">Encerrar meu acesso</button>
           </div>
           <div id="result-area" hidden><div class="result-ornament">✳</div><p id="result-text" class="muted"></p><button class="btn primary wide" id="again">SOLICITAR NOVAMENTE <span class="btn-arrow">↗</span></button></div>
@@ -124,7 +124,7 @@
   <div id="tutorial-root"></div>
   <footer class="site-footer"><div class="shell footer-inner"><span>© 2026 • PROJETO ACADÊMICO DEMONSTRATIVO — IFAC</span><span>*Frequência indicada na configuração do protótipo. Não representa medição em tempo real. Uso exclusivo em maquete.</span></div></footer>
   <script src="config.public.js"></script>
-  <script src="visitor.js"></script>
+  <script src="visitor.js?v=4.1-ciclo"></script>
   <script src="tutorial.js"></script>
 </body>
 </html>
