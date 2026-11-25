@@ -262,11 +262,12 @@ async function act(path,body={}){
 function updateControls(){
   const ready=inTour()?demo.status==='active':latestSharedState?.status==='active'&&latestSharedState.hardware?.tx_online&&latestSharedState.receivers?.[state.selectedTarget]?.online&&!latestSharedState.hardware?.busy;
   document.querySelectorAll('.command').forEach(el=>el.disabled=state.sending||!ready);
-  $('auto').disabled=state.sending||!inTour()||!ready;
+  $('auto').disabled=state.sending||!ready||(!inTour()&&!latestSharedState?.receivers?.[state.selectedTarget]?.cycle_capable);
+  $('auto').title=$('auto').disabled&&!inTour()?'Aguarde aprovação e receptor com firmware de ciclo online.':'';
 }
 async function sendCommand(body){
   if(state.sending)return;
-  if(!inTour() && body.kind==='auto'){notify('Ciclo disponível somente no tutorial.',true);return;}
+  if(!inTour() && body.kind==='auto' && !latestSharedState?.receivers?.[body.target_id||state.selectedTarget]?.cycle_capable){notify('Atualize o firmware do receptor para habilitar o ciclo.',true);return;}
   state.sending=true;
   // Captura o destinatário no momento do clique, não após alguma atualização da tela.
   const dest=body.target_id||state.selectedTarget;

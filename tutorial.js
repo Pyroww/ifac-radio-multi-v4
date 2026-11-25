@@ -152,7 +152,7 @@
     {
       selector: '.cycle-card',
       title: 'O ciclo também é individual.',
-      text: 'No tutorial você pode programar os tempos do ciclo para o destino selecionado; no controle físico desta versão, somente comandos manuais. Um ciclo em B não altera o funcionamento de A. São estados independentes no simulador.',
+      text: 'No tutorial você pode programar os tempos do ciclo para o destino selecionado; no controle físico, o receptor atualizado executa o ciclo por até 90 segundos. Um ciclo em B não altera o funcionamento de A. São estados independentes no simulador.',
       place: 'left'
     },
     {
